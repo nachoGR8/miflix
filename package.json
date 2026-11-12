@@ -1,0 +1,25 @@
+{
+  "name": "miflix",
+  "productName": "MiFlix",
+  "version": "1.0.0",
+  "description": "Tu propio Netflix de escritorio: catálogo y disponibilidad en España, cine libre reproducible y tu biblioteca local.",
+  "main": "main.js",
+  "author": "Ignacio Piles Pla",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "test": "node test/providers.test.js",
+    "dist": "npx --yes electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^45.3.1"
+  },
+  "build": {
+    "appId": "dev.nachogr8.miflix",
+    "productName": "MiFlix",
+    "files": ["main.js", "preload.js", "src/**", "renderer/**", "package.json"],
+    "win": { "target": "nsis" },
+    "mac": { "target": "dmg", "category": "public.app-category.entertainment" },
+    "linux": { "target": ["AppImage", "deb"], "category": "AudioVideo" }
+  }
+}

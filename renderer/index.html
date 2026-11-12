@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; media-src 'self' media: blob: https: http:; worker-src blob:; font-src 'self'; connect-src https: http:; base-uri 'none'; form-action 'none'" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MiFlix</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="side" aria-label="Navegación principal">
+      <div class="brand" aria-label="MiFlix">MiFlix</div>
+      <nav class="nav" id="nav"></nav>
+      <div class="side-foot" id="side-foot"></div>
+    </aside>
+    <main class="main" id="main">
+      <header class="topbar">
+        <label class="search">
+          <span class="sr-only">Buscar películas y series</span>
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14z M20 20l-4.2-4.2"/></svg>
+          <input id="q" type="search" placeholder="Busca un título, una persona o un género" autocomplete="off" spellcheck="false" />
+        </label>
+        <span class="region" id="region" title="Disponibilidad calculada para tu país"></span>
+      </header>
+      <div id="content"></div>
+    </main>
+  </div>
+  <div id="modal-root"></div>
+  <div id="player-root"></div>
+  <div id="toast-root" role="status" aria-live="polite"></div>
+  <script src="vendor/hls.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
